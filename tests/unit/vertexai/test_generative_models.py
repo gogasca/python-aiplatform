@@ -146,6 +146,23 @@ _RENAMING_INPUT_SCHEMA = {
             "type": "strinG",
             "format": "date",
         },
+        "ordered": {
+            "type": "OBJECT",
+            "properties": {
+                "a": {"type": "stRIng"},
+                "b": {"type": "Integer"},
+                "c": {
+                    "type": "objeCT",
+                    "properties": {
+                        "x": {"type": "string"},
+                        "y": {"type": "number"},
+                        "z": {"type": "integer"},
+                    },
+                    "property_ordering": ["z", "y", "x"],
+                },
+            },
+            "propertyOrdering": ["b", "a", "c"],
+        },
     },
 }
 _RENAMING_EXPECTED_SCHEMA = {
@@ -167,7 +184,25 @@ _RENAMING_EXPECTED_SCHEMA = {
             "type_": "STRING",
             "format_": "date",
         },
+        "ordered": {
+            "type_": "OBJECT",
+            "properties": {
+                "a": {"type_": "STRING"},
+                "b": {"type_": "INTEGER"},
+                "c": {
+                    "type_": "OBJECT",
+                    "properties": {
+                        "x": {"type_": "STRING"},
+                        "y": {"type_": "NUMBER"},
+                        "z": {"type_": "INTEGER"},
+                    },
+                    "property_ordering": ["z", "y", "x"],  # explicit order kept
+                },
+            },
+            "property_ordering": ["b", "a", "c"],  # explicit order kept
+        },
     },
+    "property_ordering": ["names", "date", "ordered"],  # implicit order added
 }
 
 
