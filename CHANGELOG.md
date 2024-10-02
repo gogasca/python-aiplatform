@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.69.1](https://github.com/googleapis/python-aiplatform/compare/v1.69.0...v1.69.1) (2024-10-02)
+
+
+### Bug Fixes
+
+* Update the docstring for LangchainAgent ([f7fe2b0](https://github.com/googleapis/python-aiplatform/commit/f7fe2b0f98c2906a6c9ad2dc0cfca26f3df025f9))
+
 ## [1.69.0](https://github.com/googleapis/python-aiplatform/compare/v1.68.0...v1.69.0) (2024-10-01)
 
 
